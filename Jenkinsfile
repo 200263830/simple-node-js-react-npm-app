@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                sh 'apk add sudo'
                 sh 'sudo chown -R $(whoami) ~/.npm'
                 sh 'npm install' 
             }
